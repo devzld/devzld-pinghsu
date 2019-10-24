@@ -3,7 +3,7 @@ author: devzld
 url: https://devzld.github.io
 destination: docs
 baseurl:
-cdnurl: https://cdn.jsdelivr.net/gh/devzld/devzld.github.io@2e23f4e691389a9ef51a3d3631d93a324c389ddb
+cdnurl: https://cdn.jsdelivr.net/gh/devzld/devzld.github.io@718f11578b834c5267e68b8d3900cf06da0c9c56
 resume_site: https://devzld.github.io
 description: 个人博客
 github_username: devzld
