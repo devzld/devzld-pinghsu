@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title></title>
+    <description>个人博客</description>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Thu, 24 Oct 2019 19:27:19 +0800</pubDate>
+    <lastBuildDate>Thu, 24 Oct 2019 19:27:19 +0800</lastBuildDate>
+    <generator>Jekyll v3.8.5</generator>
+    
+      <item>
+        <title>使用jsdelivr免费CDN加速你的网站</title>
+        <description>&lt;p&gt;jsDelivr 是国外的一家优秀的公共 CDN 服务提供商，也是首个打通中国大陆（网宿公司运营）与海外的免费 CDN 服务。&lt;/p&gt;
+
+&lt;p&gt;jsDelivr 有一个十分好用的功能——它可以加速 Github 仓库的文件。借此我们可以用来加速我们的网站。&lt;/p&gt;
+
+&lt;p&gt;首先在Github上建一个公开的仓库，比如我建的名为static的库，
+在Github上访问路径是&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;https://github.com/devzld/static/blob/master/asset/js/jquery.js
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;对应jsdelivr访问路径是：&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;https://cdn.jsdelivr.net/gh/devzld/static@master/asset/js/jquery.js
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;和&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;https://cdn.jsdelivr.net/gh/devzld/static@master/asset/js/jquery.min.js
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;缩小版本功能，将“.min”添加到任何JS / CSS文件中，jsdelivr将自动生成文件。&lt;/p&gt;
+
+</description>
+        <pubDate>Thu, 24 Oct 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2019-10-24-%E4%BD%BF%E7%94%A8jsdelivr%E5%85%8D%E8%B4%B9CDN%E5%8A%A0%E9%80%9F%E4%BD%A0%E7%9A%84%E7%BD%91%E7%AB%99</link>
+        <guid isPermaLink="true">http://localhost:4000/2019-10-24-%E4%BD%BF%E7%94%A8jsdelivr%E5%85%8D%E8%B4%B9CDN%E5%8A%A0%E9%80%9F%E4%BD%A0%E7%9A%84%E7%BD%91%E7%AB%99</guid>
+        
+        
+        <category>技术教程</category>
+        
+      </item>
+    
+      <item>
+        <title>一次异常OutOfMemoryError</title>
+        <description>&lt;h3 id=&quot;崩溃日志如下&quot;&gt;崩溃日志如下：&lt;/h3&gt;
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;java.lang.OutOfMemoryError: pthread_create &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;1040KB stack&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; failed: Try again
+	at java.lang.Thread.nativeCreate&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Native Method&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+	at java.lang.Thread.start&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Thread.java:1063&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+	at java.util.concurrent.ThreadPoolExecutor.addWorker&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;ThreadPoolExecutor.java:920&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+	at java.util.concurrent.ThreadPoolExecutor.ensurePrestart&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;ThreadPoolExecutor.java:1553&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+	at java.util.concurrent.ScheduledThreadPoolExecutor.delayedExecute&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;ScheduledThreadPoolExecutor.java:306&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+	at java.util.concurrent.ScheduledThreadPoolExecutor.schedule&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;ScheduledThreadPoolExecutor.java:503&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+	at java.util.concurrent.ScheduledThreadPoolExecutor.execute&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;ScheduledThreadPoolExecutor.java:592&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+	at okhttp3.internal.http2.Http2Connection&lt;span class=&quot;nv&quot;&gt;$ReaderRunnable&lt;/span&gt;.applyAndAckSettings&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Http2Connection.java:737&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+	at okhttp3.internal.http2.Http2Connection&lt;span class=&quot;nv&quot;&gt;$ReaderRunnable&lt;/span&gt;.settings&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Http2Connection.java:709&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+	at okhttp3.internal.http2.Http2Reader.readSettings&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Http2Reader.java:289&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+	at okhttp3.internal.http2.Http2Reader.nextFrame&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Http2Reader.java:141&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+	at okhttp3.internal.http2.Http2Reader.readConnectionPreface&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Http2Reader.java:80&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+	at okhttp3.internal.http2.Http2Connection&lt;span class=&quot;nv&quot;&gt;$ReaderRunnable&lt;/span&gt;.execute&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Http2Connection.java:608&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+	at okhttp3.internal.NamedRunnable.run&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;NamedRunnable.java:32&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+	at java.lang.Thread.run&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Thread.java:818&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;原因&quot;&gt;原因&lt;/h3&gt;
+&lt;p&gt;手机限制了线程的最大创建数量，OkHttpClient() 的创建没有采用单例。&lt;/p&gt;
+
+&lt;h3 id=&quot;解决&quot;&gt;解决&lt;/h3&gt;
+&lt;p&gt;OkHttpClient采用单例模式&lt;/p&gt;
+</description>
+        <pubDate>Thu, 24 Oct 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2019-10-24-%E4%B8%80%E6%AC%A1%E5%BC%82%E5%B8%B8OutOfMemoryError</link>
+        <guid isPermaLink="true">http://localhost:4000/2019-10-24-%E4%B8%80%E6%AC%A1%E5%BC%82%E5%B8%B8OutOfMemoryError</guid>
+        
+        
+        <category>Android</category>
+        
+      </item>
+    
+      <item>
+        <title>异常android.database.CursorWindowAllocationException</title>
+        <description>&lt;h3 id=&quot;异常信息如下&quot;&gt;异常信息如下&lt;/h3&gt;
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;io.reactivex.exceptions.UndeliverableException: android.database.CursorWindowAllocationException: Cursor window allocation of 2048 kb failed. &lt;span class=&quot;c&quot;&gt;# Open Cursors=1 (# cursors opened by this proc=1)&lt;/span&gt;
+	at io.reactivex.plugins.RxJavaPlugins.onError&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;RxJavaPlugins.java:367&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+	at io.reactivex.internal.schedulers.ScheduledRunnable.run&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;ScheduledRunnable.java:69&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+	at io.reactivex.internal.schedulers.ScheduledRunnable.call&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;ScheduledRunnable.java:57&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+	at java.util.concurrent.FutureTask.run&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;FutureTask.java:237&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+	at java.util.concurrent.ScheduledThreadPoolExecutor&lt;span class=&quot;nv&quot;&gt;$ScheduledFutureTask&lt;/span&gt;.access&lt;span class=&quot;nv&quot;&gt;$201&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;ScheduledThreadPoolExecutor.java:152&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+	at java.util.concurrent.ScheduledThreadPoolExecutor&lt;span class=&quot;nv&quot;&gt;$ScheduledFutureTask&lt;/span&gt;.run&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;ScheduledThreadPoolExecutor.java:265&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+	at java.util.concurrent.ThreadPoolExecutor.runWorker&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;ThreadPoolExecutor.java:1112&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+	at java.util.concurrent.ThreadPoolExecutor&lt;span class=&quot;nv&quot;&gt;$Worker&lt;/span&gt;.run&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;ThreadPoolExecutor.java:587&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+	at java.lang.Thread.run&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Thread.java:818&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+Caused by: android.database.CursorWindowAllocationException: Cursor window allocation of 2048 kb failed. &lt;span class=&quot;c&quot;&gt;# Open Cursors=1 (# cursors opened by this proc=1)&lt;/span&gt;
+	at android.database.CursorWindow.&amp;lt;init&amp;gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;CursorWindow.java:108&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+	at android.database.AbstractWindowedCursor.clearOrCreateWindow&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;AbstractWindowedCursor.java:198&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+	at android.database.sqlite.SQLiteCursor.fillWindow&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;SQLiteCursor.java:139&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+	at android.database.sqlite.SQLiteCursor.getCount&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;SQLiteCursor.java:133&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+	at org.greenrobot.greendao.AbstractDao.loadAllFromCursor&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;AbstractDao.java:453&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+	at org.greenrobot.greendao.AbstractDao.loadAllAndCloseCursor&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;AbstractDao.java:203&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+	at org.greenrobot.greendao.InternalQueryDaoAccess.loadAllAndCloseCursor&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;InternalQueryDaoAccess.java:37&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+	at org.greenrobot.greendao.query.Query.list&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Query.java:89&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+	at org.greenrobot.greendao.query.QueryBuilder.list&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;QueryBuilder.java:427&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+	at com.dinghao.uboard.newversion.module.function.OfflineCardFragment.submitCardInfo&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;OfflineCardFragment.java:119&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+	at com.dinghao.uboard.newversion.module.function.OfflineCardFragment.access&lt;span class=&quot;nv&quot;&gt;$200&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;OfflineCardFragment.java:55&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+	at com.dinghao.uboard.newversion.module.function.OfflineCardFragment&lt;span class=&quot;nv&quot;&gt;$2&lt;/span&gt;.onNext&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;OfflineCardFragment.java:186&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+	at com.dinghao.uboard.newversion.module.function.OfflineCardFragment&lt;span class=&quot;nv&quot;&gt;$2&lt;/span&gt;.onNext&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;OfflineCardFragment.java:178&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+	at io.reactivex.internal.operators.observable.ObservableObserveOn&lt;span class=&quot;nv&quot;&gt;$ObserveOnObserver&lt;/span&gt;.drainNormal&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;ObservableObserveOn.java:200&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+	at io.reactivex.internal.operators.observable.ObservableObserveOn&lt;span class=&quot;nv&quot;&gt;$ObserveOnObserver&lt;/span&gt;.run&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;ObservableObserveOn.java:252&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+	at io.reactivex.internal.schedulers.ScheduledRunnable.run&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;ScheduledRunnable.java:66&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;原因&quot;&gt;原因&lt;/h3&gt;
+&lt;p&gt;使用rxjava定时器定时处理数据库，线程模式是Schedulers.io()，因为这个模式没有线程限制，导致线程太多，引起此异常&lt;/p&gt;
+
+&lt;h3 id=&quot;解决&quot;&gt;解决&lt;/h3&gt;
+&lt;p&gt;改用固定线程数，如Schedulers.single()，单个线程&lt;/p&gt;
+</description>
+        <pubDate>Thu, 24 Oct 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2019-10-24-CursorWindowAllocationException%E5%BC%82%E5%B8%B8</link>
+        <guid isPermaLink="true">http://localhost:4000/2019-10-24-CursorWindowAllocationException%E5%BC%82%E5%B8%B8</guid>
+        
+        
+        <category>Android</category>
+        
+      </item>
+    
+  </channel>
+</rss>
