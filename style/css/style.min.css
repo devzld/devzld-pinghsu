@@ -1203,7 +1203,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 }
 
 .post-tags a::before {
-    content: '# '
+    content: ''
 }
 
 .post-content .post-tags a:hover {
@@ -1286,7 +1286,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     top: 0;
     left: -15px;
     padding: 0 30px;
-    content: '#';
+    content: '';
     color: #eb5055
 }
 
@@ -1335,7 +1335,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     top: 0;
     left: -15px;
     padding: 0 30px;
-    content: '#';
+    content: '';
     color: #eb5055
 }
 
