@@ -35,12 +35,17 @@ function createStateChangeListener (xhr, callback) {
 }
 
   function valueReplace(v) {
-    if (v.indexOf("\"") != -1) {
-      v = v.toString().replace(new RegExp('(["\"])', 'g'), "\\\"");
-    }
-    else if (v.indexOf("\\") != -1)
-      v = v.toString().replace(new RegExp("([\\\\])", 'g'), "\\\\");
-    return v;
+  return v.replace(/<[^>]+>/g, '')
+        .replace(/\'/g, "\\\'")
+        .replace(/\"/g, '\\\"')
+        .replace("\\", "\\\\")
+        .replace(/[\n\t\s\r]+/g, '')
+    // if (v.indexOf("\"") != -1) {
+    //   v = v.toString().replace(new RegExp('(["\"])', 'g'), "\\\"");
+    // }
+    // else if (v.indexOf("\\") != -1)
+    //   v = v.toString().replace(new RegExp("([\\\\])", 'g'), "\\\\");
+    // return v;
   }
 
 function getXHR () {
