@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 异常io.reactivex.exceptions.UndeliverableException: android.database.CursorWindowAllocationException: Cursor window allocation of 2048 kb failed
+title: 异常io.reactivex.exceptions.UndeliverableException: android.database.CursorWindowAllocationException: Cursor window allocation of 2048 kb failed 
 date: 2019-10-24 00:00:00 +0800
 category: Android
 thumbnail: /style/image/thumbnail.png
