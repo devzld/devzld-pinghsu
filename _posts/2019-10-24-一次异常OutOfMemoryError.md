@@ -3,7 +3,7 @@ layout: post
 title: 一次异常OutOfMemoryError
 date: 2019-10-24 00:00:00 +0800
 category: Android
-thumbnail: /style/image/thumbnail.png
+thumbnail: 
 icon: book
 ---
 * content
