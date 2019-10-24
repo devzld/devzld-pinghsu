@@ -7,6 +7,10 @@
         <div class="navbar-menu">
             <a href="{{ '/archives' | prepend: site.baseurl }}">归档</a>
             <a href="{{ '/about' | prepend: site.baseurl }}">关于</a>
+            <div id="搜索区">
+                <input type="text" id="搜索输入" placeholder="搜索...">
+                <ul id="搜索结果"></ul>
+            </div>
         </div>
         <div class="navbar-mobile-menu" onclick="">
             <span class="icon-menu cross"><span class="middle"></span></span>
@@ -16,4 +20,16 @@
             </ul>
         </div>
     </div>
+    <script>
+        window.simpleJekyllSearch = new SimpleJekyllSearch({
+            searchInput: document.getElementById('搜索输入'),
+            resultsContainer: document.getElementById('搜索结果'),
+            json: '{{ site.baseurl }}/search.json',
+            searchResultTemplate: '<li><a href="{url}?query={query}" title="{desc}">{title}</a></li>',
+            noResultsText: '未找到相关文章',
+            limit: 100,
+            fuzzy: false,
+            exclude: ['Welcome']
+        })
+    </script>
 </header>

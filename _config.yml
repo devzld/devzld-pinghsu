@@ -1,6 +1,7 @@
 name: 星光的个人博客
 author: devzld
 url: https://devzld.github.io
+destination: docs
 baseurl:
 cdnurl: https://cdn.jsdelivr.net/gh/devzld/devzld.github.io@2b289aa352a84f79fade0713c903c5d18532de8c
 resume_site: https://devzld.github.io
