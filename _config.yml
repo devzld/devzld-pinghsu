@@ -21,3 +21,5 @@ comments :
     repo : devzld.github.io
     owner : devzld
     admin : 'devzld'
+gems:
+  - jekyll-sitemap
