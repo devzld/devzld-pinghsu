@@ -1,11 +1,11 @@
-name: 
-author: 
-url: 
+name: 星光的个人博客
+author: devzld
+url: https://devzld.github.io
 baseurl: 
-resume_site: 
-description: 
-github_username: 
-github: 
+resume_site: https://devzld.github.io
+description: 个人博客
+github_username: devzld
+github: https://github.com/devzld
 plugins: [jekyll-paginate]
 permalink: /:year-:month-:day-:title
 paginate: 12
