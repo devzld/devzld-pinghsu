@@ -2409,7 +2409,7 @@ a.navbar-logo span {
 .post-container {
     position: relative;
     text-align: justify;
-    padding-left: 249px;
+    padding-left: 16px;
     width: 1084px;
     display: inline-block
 }
@@ -2424,7 +2424,7 @@ a.navbar-logo span {
 
 .post-container .post-content {
     display: inline-block;
-    width: 819px;
+    width: 1052px;
     text-align: left;
     background: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
