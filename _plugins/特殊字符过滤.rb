@@ -10,7 +10,7 @@ module Jekyll
       输入.gsub! '"',''
       输入.gsub! '{',''
       输入.gsub! '}',''
-      输入
+      输入.gsub! ':',''
     end
   end
 end
