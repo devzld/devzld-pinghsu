@@ -26,8 +26,8 @@
                 try {
                     var text = xhr.responseText
                     text = valueReplace(text)
-                  console.log(text)
-                  callback(null, JSON.parse(text))
+                    console.log(text)
+                    callback(null, JSON.parse(text))
                 } catch (err) {
                     callback(err, null)
                 }
@@ -36,18 +36,7 @@
     }
 
     function valueReplace(v) {
-        return v.replace(/<[^>]+>/g, '')
-            .replace(/\'/g, "\\\'")
-            .replace(/\"/g, '\\\"')
-            .replace("\\", "\\\\")
-            .replace(/[\n\t\s\r]+/g, '')
-            .replace(/  /g, ' ')
-        // if (v.indexOf("\"") != -1) {
-        //   v = v.toString().replace(new RegExp('(["\"])', 'g'), "\\\"");
-        // }
-        // else if (v.indexOf("\\") != -1)
-        //   v = v.toString().replace(new RegExp("([\\\\])", 'g'), "\\\\");
-        // return v;
+        return v.replace(/  /g, ' ')
     }
 
     function getXHR() {
