@@ -1,11 +1,11 @@
 ---
 layout: post
-title: About site
+title: 关于
 ---
 
 * content
 {:toc}
 
-## Introduction
+## 关于我
 
-some description...
+程序员，热爱技术
