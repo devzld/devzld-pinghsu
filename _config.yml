@@ -19,4 +19,4 @@ comments :
     clientSecret : 23951794a420ad09070199a1da082aa8f69574f9
     repo : devzld.github.io
     owner : devzld
-    admin : "['devzld']"
+    admin : 'devzld'
