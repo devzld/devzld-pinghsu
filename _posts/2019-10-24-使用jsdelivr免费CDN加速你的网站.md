@@ -3,7 +3,7 @@ layout: post
 title: 使用jsdelivr免费CDN加速你的网站
 date: 2019-10-24 00:00:00 +0800
 category: 技术教程
-thumbnail: 
+thumbnail: /public/thumbs/1.jpg
 icon: book
 ---
 
