@@ -24,13 +24,24 @@ function createStateChangeListener (xhr, callback) {
   return function () {
     if (xhr.readyState === 4 && xhr.status === 200) {
       try {
-        callback(null, JSON.parse(xhr.responseText))
+        var text = xhr.responseText
+        text = valueReplace(text)
+        callback(null, JSON.parse(text))
       } catch (err) {
         callback(err, null)
       }
     }
   }
 }
+
+  function valueReplace(v) {
+    if (v.indexOf("\"") != -1) {
+      v = v.toString().replace(new RegExp('(["\"])', 'g'), "\\\"");
+    }
+    else if (v.indexOf("\\") != -1)
+      v = v.toString().replace(new RegExp("([\\\\])", 'g'), "\\\\");
+    return v;
+  }
 
 function getXHR () {
   return window.XMLHttpRequest ? new window.XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP')
