@@ -1,7 +1,6 @@
 ---
 layout: post
-title: 异常io.reactivex.exceptions.UndeliverableException: android.database.CursorWindowAllocationException: Cursor window allocation of 2048 kb failed 
-
+title: 异常android.database.CursorWindowAllocationException: Cursor window allocation of 2048 kb failed 
 date: 2019-10-24 00:00:00 +0800
 category: Android
 thumbnail: /style/image/thumbnail.png
@@ -9,7 +8,7 @@ icon: book
 ---
 
 ### 异常信息如下
-```java
+```shell
 io.reactivex.exceptions.UndeliverableException: android.database.CursorWindowAllocationException: Cursor window allocation of 2048 kb failed. # Open Cursors=1 (# cursors opened by this proc=1)
 	at io.reactivex.plugins.RxJavaPlugins.onError(RxJavaPlugins.java:367)
 	at io.reactivex.internal.schedulers.ScheduledRunnable.run(ScheduledRunnable.java:69)
