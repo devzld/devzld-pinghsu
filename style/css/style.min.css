@@ -1023,7 +1023,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 }
 
 .page-page {
-    max-width: 1051px;
+    max-width: 900px;
     padding: 100px 60px 20px;
     background: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
