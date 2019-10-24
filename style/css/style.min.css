@@ -496,12 +496,14 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 .navbar-logo {
     font-size: 22px;
     line-height: 22px;
+    position: absolute;
     top: 50%;
     left: 0;
     display: block;
     width: auto;
     max-width: 50%;
     height: 32px;
+    /*margin-top: -28px;*/
     margin-left: 25px;
     text-decoration: none
 }
