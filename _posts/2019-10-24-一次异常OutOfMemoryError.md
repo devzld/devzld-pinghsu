@@ -6,8 +6,6 @@ category: Android
 thumbnail: 
 icon: book
 ---
-* content
-{:toc}
 
 ### 崩溃日志如下：
 ```shell

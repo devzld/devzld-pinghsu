@@ -6,8 +6,6 @@ category: Android
 thumbnail: 
 icon: book
 ---
-* content
-{:toc}
 
 ### 异常信息如下
 ```shell
