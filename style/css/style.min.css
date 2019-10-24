@@ -1023,7 +1023,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 }
 
 .page-page {
-    max-width: 900px;
+    max-width: 750px;
     padding: 100px 60px 20px;
     background: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
@@ -2424,7 +2424,7 @@ a.navbar-logo span {
 
 .post-container .post-content {
     display: inline-block;
-    width: 900px;
+    width: 750px;
     text-align: left;
     background: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
