@@ -26,6 +26,7 @@ function createStateChangeListener (xhr, callback) {
       try {
         var text = xhr.responseText
         text = character(text)
+        console.log(text)
         callback(null, JSON.parse(text))
       } catch (err) {
         callback(err, null)
