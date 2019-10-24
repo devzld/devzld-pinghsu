@@ -7,6 +7,25 @@
 
     {% include header.html %}
 
+    <div id="搜索区" style="padding: 5px;">
+        <input type="text" id="搜索输入" placeholder="搜索...">
+        <ul id="搜索结果"></ul>
+    </div>
+    <script>
+        window.simpleJekyllSearch = new SimpleJekyllSearch({
+            searchInput: document.getElementById('搜索输入'),
+            resultsContainer: document.getElementById('搜索结果'),
+            json: '{{ site.baseurl }}/search.json',
+            searchResultTemplate: '<li><a href="{url}?query={query}" title="{desc}">{title}</a></li>',
+            noResultsText: '未找到相关文章',
+            limit: 100,
+            fuzzy: false,
+            exclude: ['Welcome']
+        })
+    </script>
+    <!-- script pointing to jekyll-search.js -->
+    <script src="{{site.cdnurl}}/style/js/simple-jekyll-search.min.js"></script>
+
     {{ content }}
     
     {% include footer.html %}
