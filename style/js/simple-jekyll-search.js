@@ -25,6 +25,7 @@ function createStateChangeListener (xhr, callback) {
     if (xhr.readyState === 4 && xhr.status === 200) {
       try {
         var text = xhr.responseText
+        console.log(text)
         text = valueReplace(text)
         callback(null, JSON.parse(text))
       } catch (err) {
