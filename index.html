@@ -5,6 +5,9 @@ layout: default
     <input type="text" id="搜索输入" placeholder="搜索...">
     <ul id="搜索结果"></ul>
 </div>
+<!-- script pointing to jekyll-search.js -->
+<script src="{{site.cdnurl}}/style/js/simple-jekyll-search.min.js"></script>
+
 <script>
     window.simpleJekyllSearch = new SimpleJekyllSearch({
         searchInput: document.getElementById('搜索输入'),
@@ -17,8 +20,6 @@ layout: default
         exclude: ['Welcome']
     })
 </script>
-<!-- script pointing to jekyll-search.js -->
-<script src="{{site.cdnurl}}/style/js/simple-jekyll-search.min.js"></script>
 
 <div class="main-content index-page clearfix">
     <div class="post-lists">
