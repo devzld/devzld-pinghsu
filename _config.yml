@@ -7,7 +7,7 @@ resume_site: https://devzld.github.io
 description: 个人博客
 github_username: devzld
 github: https://github.com/devzld
-plugins: [jekyll-paginate]
+plugins: [jekyll-paginate, jekyll-sitemap]
 permalink: /:year-:month-:day-:title
 paginate: 12
 paginate_path: "/page/:num/"
@@ -21,5 +21,3 @@ comments :
     repo : devzld.github.io
     owner : devzld
     admin : 'devzld'
-gems:
-  - jekyll-sitemap

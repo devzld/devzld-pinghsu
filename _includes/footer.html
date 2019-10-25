@@ -17,7 +17,12 @@
                     </a>-->
                     <div class="info-text">
                         <p>Copyright &copy; 2016 - {{ site.time | date: '%Y' }} <a href="{{site.resume_site}}"><code>{{ site.author }}</code></a></p>
-                        <p>Powered by <a href="http://jekyllrb.com" target="_blank" rel="nofollow"><code>jekyll</code></a>，theme is <a href="https://github.com/lightfish-zhang/pinghsu-jekyll" target="_blank" rel="nofollow"><code>pinghsu</code></a></p>
+                        <span id="busuanzi_container_site_pv">
+                            总访问量<span id="busuanzi_value_site_pv"></span>次
+                        </span>
+                        <span id="busuanzi_container_site_uv">
+                          访客数<span id="busuanzi_value_site_uv"></span>人次
+                        </span>
                     </div>
                 </div>
             </div>
@@ -36,6 +41,8 @@
 </footer>
 <!--51la统计-->
 <script type="text/javascript" src="//js.users.51.la/20433593.js"></script>
+<!--卜算子统计-->
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <!-- #end -->
 <script src="//cdn.bootcss.com/jquery/1.10.1/jquery.min.js"></script>
 <script>
