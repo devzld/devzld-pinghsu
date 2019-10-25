@@ -18,7 +18,7 @@ RUN yum install -y wget && wget -O install.sh http://download.bt.cn/install/inst
 ```
 
 注意后面是修改sh install.sh成sh -c '/bin/echo -e "y" | sh install.sh'。
-其中y表示输入y同意安装一次，主要参考这个https://blog.csdn.net/leon_wzm/article/details/78260795。
+其中y表示输入y同意安装一次，主要参考这个[https://blog.csdn.net/leon_wzm/article/details/78260795](https://blog.csdn.net/leon_wzm/article/details/78260795)。
 
 然后进入Dockerfile文件目录运行
 
@@ -45,7 +45,7 @@ docker run -i -t -d --name baota -p 20:20 -p 21:21 -p 80:80 -p 443:443 -p 888:88
 docker exec -it baota /bin/bash
 ```
 
-进入容器，然后再执行一下启动宝塔命令，https://www.bt.cn/btcode.html中的
+进入容器，然后再执行一下启动宝塔命令，[https://www.bt.cn/btcode.html](https://www.bt.cn/btcode.html)中的
 
 ```shell
 /etc/init.d/bt start
