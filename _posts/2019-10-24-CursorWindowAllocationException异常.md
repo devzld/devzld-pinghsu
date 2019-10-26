@@ -42,4 +42,4 @@ Caused by: android.database.CursorWindowAllocationException: Cursor window alloc
 使用rxjava定时器定时处理数据库，线程模式是Schedulers.io()，因为这个模式没有线程限制，导致线程太多，引起此异常
 
 ### 解决
-改用固定线程数，如Schedulers.from(Executors.newFixedThreadPool(20))
+改用固定线程数，如Schedulers.from(Executors.newFixedThreadPool(n))
