@@ -1,0 +1,43 @@
+---
+title: Go的继承
+toc: true
+date: 2019-06-26 09:11:23
+tags: Go
+category: Go
+---
+
+一个结构体嵌到另一个结构体中，称为组合。
+
+如果一个结构体中嵌套了另一个匿名结构体，那么这个结构体可以直接访问匿名结构体的方法，从而实现继承；
+
+嵌套多个匿名结构体，可以实现多继承。
+
+如果一个结构体嵌套了另一个有名的结构体，那么这叫做组合。
+
+<!--more-->
+
+```go
+// 父结构体
+type BaseController struct {
+}
+// 方法
+func (c *BaseController) ReturnJson() {
+	
+}
+// 继承
+type UserController struct {
+	BaseController
+}
+
+// 组合
+type OtherController struct {
+	userController UserController
+}
+
+// 调用
+user := UserController{}
+other := OtherController{}
+user.ReturnJson()  //直接父结构体调用
+other.userController.ReturnJson() //调用组合的结构体方法
+```
+

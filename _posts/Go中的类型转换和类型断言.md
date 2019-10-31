@@ -1,0 +1,48 @@
+---
+title: Go中的类型断言
+toc: false
+date: 2019-06-29 23:11:03
+category: Go
+tags: Go
+---
+
+Go中的类型断言
+
+<!--more-->
+
+类型断言包括安全型断言和非安全型断言，类似Java中的`instanceof`
+
+```go
+func main() {
+	s := "abc"
+	i := s.(int)
+	i, ok := s.(int)
+}
+```
+
+这里会报错 invalid type assertion: s.(string) (non-interface type string on left)，
+
+因为只有interface类型才能进行类型断言
+
+改成这样就可以了
+
+```go
+func main() {
+	s := "123"
+  
+  //不安全的断言，如果类型不匹配，会在运行时调用内置的panic，抛异常。
+	i := interface{}(s).(int)  	
+  //这里会抛异常
+	fmt.Println(i)
+  
+  //安全的断言，ok表示类型是否匹配成功，i为返回的int型的值，如果失败返回改类型的零值。  
+	i, ok := interface{}(s).(int) 
+  //这里会返回0，false，表示类型不匹配
+	fmt.Println(i, ok)
+  
+  ss, ok := interface{}(s).(string)
+  //这里会返回123，true，表示类型匹配
+	fmt.Println(ss, ok)
+}
+```
+

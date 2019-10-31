@@ -1,0 +1,74 @@
+---
+title: Go语言函数方法
+toc: true
+date: 2019-06-26 09:44:32
+tags: Go
+category: Go
+---
+
+Go语言中同时有函数和方法。
+
+<!--more-->
+
+方法有接收者，分为值接收者和指针接收者。
+
+值接收者，是接收者的类型是一个值，是一个副本，方法内部无法对其真正的接收者做更改；
+
+指针接收者，接收者的类型是一个指针，是接收者的引用，对这个引用的修改之间影响真正的接收者。
+
+```go
+type BaseController struct {
+}
+
+//函数
+func ReturnResult(res string) {
+
+}
+
+// 方法，值接收者
+func (c BaseController) ReturnError() {
+
+}
+
+// 方法，指针接收者
+func (c *BaseController) ReturnJson() {
+
+}
+```
+
+例子baseController.go：
+
+```go
+package main
+
+import "fmt"
+
+type BaseController struct {
+	res string
+}
+
+func (c *BaseController) ReturnJson() {
+	c.res = "json"
+}
+
+func (c BaseController) ReturnError() {
+	c.res = "error"
+}
+
+func main() {
+	base := BaseController{res: "初始化值"}
+	base.ReturnError()     //值接收者，原值未改变
+	fmt.Println(base.res)
+	base.ReturnJson()			 //指针接收者，原值改变
+	fmt.Println(base.res)
+}
+```
+
+结果是：
+
+```shell
+$ go run baseController.go 
+初始化值
+json
+```
+

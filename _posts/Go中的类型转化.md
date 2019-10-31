@@ -1,0 +1,41 @@
+---
+title: Go中的类型转化
+toc: true
+date: 2019-06-27 09:36:46
+category: Go
+tags: Go
+---
+
+Go中的类型互相转化
+
+<!--more-->
+
+string和int类型的互相转化：
+
++ string转int:
+  + int,err:=strconv.Atoi(string)
++ string转int64:
+  + int64,err := strconv.ParseInt(string,10,64)
++ int转string:
+  + string := strconv.Itoa(int)
++ int64转string：
+  + string := strconv.FormatInt(int64,10)
+
+
+
+int64转int32可通过字符串中转一下：
+
+```go
+func main() {
+	var a int64 = math.MaxInt64
+
+	s := strconv.FormatInt(a, 10)
+	b, _ := strconv.ParseInt(s, 10, 32)
+	c := int32(b)
+	
+	fmt.Println(c)
+	fmt.Println(reflect.TypeOf(c))
+}
+```
+
+直接用int32(int64Str)当int64超过int32长度会出现问题返回-1

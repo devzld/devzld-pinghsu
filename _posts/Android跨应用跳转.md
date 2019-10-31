@@ -1,0 +1,75 @@
+---
+title: Android跨应用跳转(通过URL Scheme)
+toc: false
+date: 2019-06-28 11:14:52
+category: Android
+tags: Android
+---
+
+Android跨应用跳转(通过URL Scheme)
+
+<!--more-->
+
+### 1.在需要被跳转的应用的manifest里加入intent-filter如下：
+
+```xml
+<activity android:name=".module.main.ui.SplashActivity">
+  <!--正常启动-->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+
+            </intent-filter>
+
+  <!--URL Scheme启动-->
+            <intent-filter>
+                <!--必有项-->
+                <action android:name="android.intent.action.VIEW"/>
+                <!--如果希望该应用可以通过浏览器的连接启动，则添加该项-->
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <!--表示该页面可以被隐式调用，必须加上该项-->
+                <category android:name="android.intent.category.DEFAULT"/>
+              	<!--这里省略了port-->
+                <data
+                    android:host="login"
+                    android:path="/loginActivity"
+                    android:scheme="ujy"/>
+            </intent-filter>
+        </activity>
+```
+
+上面设置了intent-filter之后，我们就可以通过下面的链接打开Activity了
+
+```
+ujy://login/loginActivity?phone=13812670001&cmd=login
+```
+
+其中？后面的参数可选。
+
+### 2.在网页上可以这样打开：
+
+```html
+<a href="ujy://login/loginActivity?phone=13812670001&cmd=login">打卡应用</a>
+```
+
+### 3.原生可以这样调用：
+
+```java
+ Intent intent = new Intent(Intent.ACTION_VIEW,Uri.parse("ujy://login/loginActivity?phone=13812670001&cmd=login"));
+ startActivity(intent);
+```
+
+### 4.获取跳转参数：
+
+```java
+Uri uri = getIntent().getData();
+if (uri != null) {
+    String url = uri.toString();
+    String phone = uri.getQueryParameter("phone");
+    Logger.e(TAG, "phone = " + phone + " url = " + url);
+}
+```
+
+通过Intent，我们拿到跳转的参数。
+
